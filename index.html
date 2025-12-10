@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب حامل مغناطيسي قوي K007 - شحن مجاني لكل الولايات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* تعيين الخطوط والأساسيات */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            background-color: #091209;
+            color: #a4f0d7;
+            line-height: 1.6;
+            padding: 15px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        /* شريط العنوان المتنقل */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            border-radius: 0 0 15px 15px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border: 1px solid #364836;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #8de361;
+        }
+        
+        .phone-contact {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(36, 72, 54, 0.5);
+            padding: 8px 15px;
+            border-radius: 50px;
+            border: 1px solid #71938e;
+        }
+        
+        .phone-contact i {
+            color: #6ce084;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        @media (max-width: 992px) {
+            .content-wrapper {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        
+        /* قسم العرض البصري */
+        .visual-section {
+            flex: 1.2;
+            min-width: 0;
+        }
+        
+        .image-gallery {
+            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #364836;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .main-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 400px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 18, 9, 0.5);
+            touch-action: pan-y pinch-zoom;
+        }
+        
+        .main-image {
+            width: 400px;
+            height: 400px;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        /* أزرار التنقل بين الصور */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(36, 72, 54, 0.8);
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(108, 224, 132, 0.8);
+        }
+        
+        .prev-btn {
+            right: 10px;
+        }
+        
+        .next-btn {
+            left: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1.1rem;
+            }
+            
+            .main-image-container {
+                height: 300px;
+            }
+            
+            .main-image {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        
+        .image-thumbnails {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 5px 0;
+        }
+        
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            opacity: 0.8;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .thumbnail {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .thumbnail {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+        .thumbnail:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        
+        .thumbnail.active {
+            border-color: #6ce084;
+            opacity: 1;
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* قسم الطلب */
+        .order-section {
+            flex: 1;
+            min-width: 0;
+            position: sticky;
+            top: 100px;
+            align-self: flex-start;
+        }
+        
+        @media (max-width: 992px) {
+            .order-section {
+                position: static;
+                top: auto;
+            }
+        }
+        
+        .order-form {
+            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #364836;
+        }
+        
+        .form-title {
+            color: #8de361;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #406255;
+        }
+        
+        @media (min-width: 768px) {
+            .form-title {
+                font-size: 1.7rem;
+            }
+        }
+        
+        .product-info {
+            background: rgba(36, 72, 54, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #71938e;
+            text-align: center;
+        }
+        
+        .product-name {
+            color: #a2eb84;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .product-name {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .product-price {
+            color: #8de361;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .product-price {
+                font-size: 1.5rem;
+            }
+        }
+        
+        .old-price {
+            text-decoration: line-through;
+            color: #a4f0d7;
+            font-size: 1rem;
+            margin-left: 8px;
+            opacity: 0.7;
+        }
+        
+        .discount-badge {
+            background: #52c244;
+            color: #091209;
+            padding: 4px 8px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .shipping-note {
+            color: #83ecce;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        .stock-status {
+            background: rgba(108, 224, 132, 0.1);
+            border: 1px solid #6ce084;
+            border-radius: 8px;
+            padding: 8px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            color: #a4f0d7;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 14px;
+            background-color: #25361a;
+            border: 1px solid #587d68;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #6ce084;
+            box-shadow: 0 0 0 2px rgba(108, 224, 132, 0.3);
+        }
+        
+        .quantity-section {
+            background: rgba(36, 72, 54, 0.5);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 20px 0;
+            border: 1px solid #71938e;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        
+        .quantity-btn {
+            background-color: #3a5944;
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .quantity-btn {
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        .quantity-btn:hover {
+            background-color: #52c244;
+        }
+        
+        .quantity-display {
+            font-size: 1.4rem;
+            color: #8de361;
+            font-weight: bold;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .price-calc {
+            background: rgba(10, 18, 9, 0.7);
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 15px;
+            text-align: center;
+            border: 1px solid #566256;
+        }
+        
+        .price-info {
+            color: #a4f0d7;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        
+        .total-price {
+            font-size: 1.5rem;
+            color: #8de361;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(to right, #52c244, #6ce084);
+            color: #091209;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(108, 224, 132, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .submit-btn {
+                padding: 18px;
+                font-size: 1.3rem;
+            }
+        }
+        
+        .submit-btn:hover {
+            background: linear-gradient(to right, #3a5944, #52c244);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(108, 224, 132, 0.4);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .spinner {
+            border: 4px solid #25361a;
+            border-top: 4px solid #52c244;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* رسالة التأكيد */
+        .confirmation-message {
+            display: none;
+            text-align: center;
+            background: rgba(36, 72, 54, 0.5);
+            border-radius: 10px;
+            padding: 25px 20px;
+            margin-top: 20px;
+            border: 2px solid #6ce084;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .check-icon {
+            font-size: 3.5rem;
+            color: #6ce084;
+            margin-bottom: 15px;
+            animation: scaleIn 0.5s ease 0.2s both;
+        }
+        
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .confirmation-title {
+            color: #8de361;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .confirmation-text {
+            color: #c4f8e4;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        /* شارات الضمان (محدثة) */
+        .guarantee-badges {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        @media (min-width: 768px) {
+            .guarantee-badges {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        .guarantee-badge {
+            background: rgba(108, 224, 132, 0.1);
+            border: 1px solid #6ce084;
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .guarantee-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(108, 224, 132, 0.2);
+        }
+        
+        .guarantee-badge i {
+            font-size: 2.2rem;
+            color: #6ce084;
+            margin-bottom: 12px;
+        }
+        
+        .guarantee-badge h4 {
+            color: #a2eb84;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .guarantee-badge p {
+            font-size: 0.9rem;
+            color: #c4f8e4;
+        }
+        
+        /* قسم المميزات بعد الاستمارة */
+        .detailed-features {
+            background: linear-gradient(to bottom, #143214, #0e1c0c);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border: 1px solid #364836;
+        }
+        
+        .detailed-features-title {
+            color: #8de361;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #406255;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .feature-item {
+            background: rgba(36, 72, 54, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #587d68;
+            transition: all 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            border-color: #6ce084;
+            box-shadow: 0 5px 15px rgba(108, 224, 132, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 2.2rem;
+            color: #6ce084;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .feature-title {
+            color: #a2eb84;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .feature-desc {
+            color: #c4f8e4;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        /* تذييل الصفحة */
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            color: #83ecce;
+            font-size: 0.9rem;
+            border-top: 1px solid #364836;
+        }
+        
+        /* تصميم متجاوب إضافي */
+        @media (max-width: 576px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 0 5px;
+            }
+            
+            .sticky-header {
+                padding: 12px 15px;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .phone-contact {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            .main-image-container {
+                height: 250px;
+            }
+            
+            .main-image {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .image-gallery,
+            .order-form,
+            .detailed-features {
+                padding: 15px;
+            }
+            
+            .quantity-section {
+                padding: 15px;
+            }
+            
+            .guarantee-badges {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 577px) and (max-width: 768px) {
+            .main-image-container {
+                height: 300px;
+            }
+            
+            .main-image {
+                width: 300px;
+                height: 300px;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 992px) {
+            .main-image-container {
+                height: 350px;
+            }
+            
+            .main-image {
+                width: 350px;
+                height: 350px;
+            }
+        }
+        
+        @media (min-width: 993px) {
+            .main-image-container {
+                height: 400px;
+            }
+            
+            .main-image {
+                width: 400px;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- شريط العنوان المتنقل -->
+        <header class="sticky-header">
+            <div class="logo">حامل مغناطيسي قوي K007</div>
+            <div class="phone-contact">
+                <i class="fas fa-bolt"></i>
+                <span>خصم 24% لفترة محدودة</span>
+            </div>
+        </header>
+        
+        <div class="content-wrapper">
+            <!-- قسم العرض البصري -->
+            <section class="visual-section">
+                <div class="image-gallery">
+                    <div class="main-image-container" id="mainImageContainer">
+                        <button class="nav-btn prev-btn" id="prevBtn">←</button>
+                        <img id="mainImage" class="main-image" src="https://i.ibb.co/YVrxsfw/2.png" alt="حامل مغناطيسي قوي K007">
+                        <button class="nav-btn next-btn" id="nextBtn">→</button>
+                    </div>
+                    
+                    <div class="image-thumbnails">
+                        <div class="thumbnail active" data-img="https://i.ibb.co/YVrxsfw/2.png">
+                            <img src="https://i.ibb.co/YVrxsfw/2.png" alt="حامل مغناطيسي قوي K007 - الصورة 1">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/CKYs4Gnd/3.png">
+                            <img src="https://i.ibb.co/CKYs4Gnd/3.png" alt="حامل مغناطيسي قوي K007 - الصورة 2">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/3m8XGvY7/4.png">
+                            <img src="https://i.ibb.co/3m8XGvY7/4.png" alt="حامل مغناطيسي قوي K007 - الصورة 3">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/67T6hpZF/image.jpg">
+                            <img src="https://i.ibb.co/67T6hpZF/image.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 4">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/RGSfc6BX/H5203f31f51fe45bd802c264622cf868cp.jpg">
+                            <img src="https://i.ibb.co/RGSfc6BX/H5203f31f51fe45bd802c264622cf868cp.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 5">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/mVJ1YmqY/H50e26607871e4b3dae2b87e43b87973f0.jpg">
+                            <img src="https://i.ibb.co/mVJ1YmqY/H50e26607871e4b3dae2b87e43b87973f0.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 6">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/pjF0hmqD/Hb33d00ec762b45839052e38086c38fe6-P.jpg">
+                            <img src="https://i.ibb.co/pjF0hmqD/Hb33d00ec762b45839052e38086c38fe6-P.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 7">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/HfTLkL9j/Hd93f2b3453d24905a39851197530fc04c.jpg">
+                            <img src="https://i.ibb.co/HfTLkL9j/Hd93f2b3453d24905a39851197530fc04c.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 8">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/VWzh1rw7/H6516169edef84792b2d5d50613898b35v.jpg">
+                            <img src="https://i.ibb.co/VWzh1rw7/H6516169edef84792b2d5d50613898b35v.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 9">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/9H5hQjnh/H850dfb0e9ff849b1b073fa3a6babdb65j.jpg">
+                            <img src="https://i.ibb.co/9H5hQjnh/H850dfb0e9ff849b1b073fa3a6babdb65j.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 10">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/35YrZNjh/Hdf14e71850a542d3af49b823646d962a-V.jpg">
+                            <img src="https://i.ibb.co/35YrZNjh/Hdf14e71850a542d3af49b823646d962a-V.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 11">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/hR217DRD/Hd22a7d8f13a14c3c81afdf43e764987c4.png">
+                            <img src="https://i.ibb.co/hR217DRD/Hd22a7d8f13a14c3c81afdf43e764987c4.png" alt="حامل مغناطيسي قوي K007 - الصورة 12">
+                        </div>
+                        <div class="thumbnail" data-img="https://i.ibb.co/hFh0dL3J/Ha82742dca0554dda9ed6003ead845415-U.jpg">
+                            <img src="https://i.ibb.co/hFh0dL3J/Ha82742dca0554dda9ed6003ead845415-U.jpg" alt="حامل مغناطيسي قوي K007 - الصورة 13">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- قسم نموذج الطلب -->
+            <section class="order-section">
+                <div class="order-form">
+                    <h2 class="form-title">🚀 اطلب الآن - حامل مغناطيسي قوي K007</h2>
+                    
+                    <div class="product-info">
+                        <div class="product-name">حامل مغناطيسي قوي K007</div>
+                        <div>
+                            <span class="discount-badge">خصم 24%</span>
+                            <span class="product-price">2600.00 DA</span>
+                            <span class="old-price">3400.00 DA</span>
+                        </div>
+                        
+                        <div class="shipping-note">
+                            <i class="fas fa-truck"></i>
+                            <span>الشحن مجاني لكل الولايات - التوصيل خلال 2-5 أيام</span>
+                        </div>
+                        
+                        <div class="stock-status">
+                            <i class="fas fa-check-circle"></i>
+                            <span>متوفر في المخزون - اطلب الآن قبل نفاذ الكمية</span>
+                        </div>
+                    </div>
+                    
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="firstName">الاسم <span style="color: #8de361;">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required placeholder="أدخل اسمك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">اللقب <span style="color: #8de361;">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required placeholder="أدخل لقبك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state">الولاية <span style="color: #8de361;">*</span></label>
+                            <input type="text" id="state" name="state" required placeholder="أدخل ولايتك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">البلدية <span style="color: #8de361;">*</span></label>
+                            <input type="text" id="city" name="city" required placeholder="أدخل بلديتك">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف <span style="color: #8de361;">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="مثال: 0550123456">
+                        </div>
+                        
+                        <div class="quantity-section">
+                            <label for="quantity">عدد الطلبيات <span style="color: #8de361;">*</span></label>
+                            <p style="color: #c4f8e4; font-size: 0.9rem; margin-top: 5px;">احصل على سعر خاص عند طلب أكثر من قطعة</p>
+                            
+                            <div class="quantity-control">
+                                <button type="button" class="quantity-btn" id="decreaseQty">-</button>
+                                <div class="quantity-display" id="quantityDisplay">1</div>
+                                <input type="hidden" id="quantity" name="quantity" value="1">
+                                <button type="button" class="quantity-btn" id="increaseQty">+</button>
+                            </div>
+                            
+                            <div class="price-calc">
+                                <div class="price-info">السعر الإجمالي:</div>
+                                <div class="total-price" id="totalPrice">2600.00 DA</div>
+                                <div style="color: #83ecce; font-size: 0.85rem; margin-top: 5px;">يشمل الشحن المجاني</div>
+                            </div>
+                        </div>
+                        
+                        <div class="loading" id="loading">
+                            <div class="spinner"></div>
+                            <p>جاري إرسال الطلب...</p>
+                        </div>
+                        
+                        <!-- رسالة تأكيد الطلب -->
+                        <div class="confirmation-message" id="confirmationMessage">
+                            <div class="check-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3 class="confirmation-title">تم تأكيد طلبك بنجاح! ✓</h3>
+                            <p class="confirmation-text">شكراً لك على طلبك. سيتم التواصل معك خلال 24 ساعة لتأكيد الطلب وتحديد موعد التوصيل.</p>
+                            <div style="color: #8de361; font-weight: bold; margin-top: 15px;">
+                                <i class="fas fa-shipping-fast" style="margin-left: 5px;"></i>
+                                التوصيل خلال 2-5 أيام عمل
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>تأكيد الطلب الآن</span>
+                        </button>
+                        
+                        <div style="text-align: center; margin-top: 12px; color: #83ecce; font-size: 0.85rem;">
+                            <i class="fas fa-lock" style="margin-left: 5px;"></i>
+                            <span>بياناتك محمية ولن نشاركها مع طرف ثالث</span>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+        
+        <!-- قسم المميزات التفصيلية -->
+        <div class="detailed-features">
+            <h3 class="detailed-features-title">🔧 مميزات الحامل المغناطيسي K007 بالتفصيل</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-magnet"></i>
+                    </div>
+                    <h4 class="feature-title">قوة مغناطيسية فائقة</h4>
+                    <p class="feature-desc">مغناطيس نيوديميوم قوي يثبت هاتفك بشكل آمن حتى على الطرق الوعرة، ولا يسمح بسقوط الهاتف حتى أثناء القيادة بسرعات عالية.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h4 class="feature-title">دوران 360 درجة</h4>
+                    <p class="feature-desc">يمكنك تدوير هاتفك في أي اتجاه، عمودي أو أفقي، لمشاهدة المحتوى أو استخدام التطبيقات بكل راحة.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h4 class="feature-title">تركيب سهل في السيارة</h4>
+                    <p class="feature-desc">يتوافق مع جميع أنواع السيارات، ويمكن تركيبه على الزجاج الأمامي أو على لوحة القيادة بسهولة وبدون حفر.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4 class="feature-title">مناسب لجميع الهواتف</h4>
+                    <p class="feature-desc">يعمل مع جميع هواتف الآيفون وسامسونج وهواوي وغيرها، بغض النظر عن حجم الهاتف أو سماكته.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h4 class="feature-title">تصميم متين وعالي الجودة</h4>
+                    <p class="feature-desc">مصنوع من مواد عالية الجودة مقاومة للخدش والصدمات، ويحافظ على شكله لفترة طويلة.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="feature-title">تركيب وإزالة سريعة</h4>
+                    <p class="feature-desc">يمكنك تركيب وإزالة هاتفك بيد واحدة وبسرعة، مما يوفر لك الوقت والجهد أثناء القيادة.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- شارات الضمان (محدثة - حذف دعم فني وضمان 6 أشهر) -->
+        <div class="guarantee-badges">
+            <div class="guarantee-badge">
+                <i class="fas fa-shipping-fast"></i>
+                <h4>شحن مجاني</h4>
+                <p>لكل الولايات</p>
+            </div>
+            
+            <div class="guarantee-badge">
+                <i class="fas fa-undo-alt"></i>
+                <h4>إرجاع سهل</h4>
+                <p>خلال 7 أيام</p>
+            </div>
+        </div>
+        
+        <!-- تذييل الصفحة -->
+        <footer class="footer">
+            <p>© 2023 حامل مغناطيسي K007 - جميع الحقوق محفوظة</p>
+        </footer>
+    </div>
+
+    <script>
+        // التحكم في الكمية والسعر
+        const basePrice = 2600.00;
+        const additionalPrice = 2000.00;
+        let quantity = 1;
+        
+        const quantityDisplay = document.getElementById('quantityDisplay');
+        const quantityInput = document.getElementById('quantity');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const decreaseBtn = document.getElementById('decreaseQty');
+        const increaseBtn = document.getElementById('increaseQty');
+        const loadingElement = document.getElementById('loading');
+        const submitBtn = document.getElementById('submitBtn');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        
+        function updatePrice() {
+            let totalPrice = basePrice;
+            if (quantity > 1) {
+                totalPrice += (quantity - 1) * additionalPrice;
+            }
+            
+            quantityDisplay.textContent = quantity;
+            quantityInput.value = quantity;
+            totalPriceElement.textContent = totalPrice.toFixed(2) + ' DA';
+            
+            // تحديث نص زر الطلب بناءً على الكمية
+            if (quantity > 1) {
+                submitBtn.querySelector('span').textContent = `طلب ${quantity} قطع الآن`;
+            } else {
+                submitBtn.querySelector('span').textContent = 'تأكيد الطلب الآن';
+            }
+        }
+        
+        decreaseBtn.addEventListener('click', () => {
+            if (quantity > 1) {
+                quantity--;
+                updatePrice();
+            }
+        });
+        
+        increaseBtn.addEventListener('click', () => {
+            quantity++;
+            updatePrice();
+        });
+        
+        // التحكم في معرض الصور
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const mainImage = document.getElementById('mainImage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const images = [
+            "https://i.ibb.co/YVrxsfw/2.png",
+            "https://i.ibb.co/CKYs4Gnd/3.png",
+            "https://i.ibb.co/3m8XGvY7/4.png",
+            "https://i.ibb.co/67T6hpZF/image.jpg",
+            "https://i.ibb.co/RGSfc6BX/H5203f31f51fe45bd802c264622cf868cp.jpg",
+            "https://i.ibb.co/mVJ1YmqY/H50e26607871e4b3dae2b87e43b87973f0.jpg",
+            "https://i.ibb.co/pjF0hmqD/Hb33d00ec762b45839052e38086c38fe6-P.jpg",
+            "https://i.ibb.co/HfTLkL9j/Hd93f2b3453d24905a39851197530fc04c.jpg",
+            "https://i.ibb.co/VWzh1rw7/H6516169edef84792b2d5d50613898b35v.jpg",
+            "https://i.ibb.co/9H5hQjnh/H850dfb0e9ff849b1b073fa3a6babdb65j.jpg",
+            "https://i.ibb.co/35YrZNjh/Hdf14e71850a542d3af49b823646d962a-V.jpg",
+            "https://i.ibb.co/hR217DRD/Hd22a7d8f13a14c3c81afdf43e764987c4.png",
+            "https://i.ibb.co/hFh0dL3J/Ha82742dca0554dda9ed6003ead845415-U.jpg"
+        ];
+        
+        let currentImageIndex = 0;
+        
+        function updateGallery(index) {
+            currentImageIndex = index;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            
+            mainImage.src = images[currentImageIndex];
+            
+            // تحديث الصور المصغرة النشطة
+            thumbnails.forEach((thumb, i) => {
+                if (i === currentImageIndex) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+            
+            // إضافة تأثير تغيير الصورة
+            mainImage.style.opacity = '0.7';
+            setTimeout(() => {
+                mainImage.style.opacity = '1';
+            }, 200);
+        }
+        
+        // أحداث أزرار التنقل
+        prevBtn.addEventListener('click', () => {
+            updateGallery(currentImageIndex - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            updateGallery(currentImageIndex + 1);
+        });
+        
+        // أحداث الصور المصغرة
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', function() {
+                updateGallery(index);
+            });
+        });
+        
+        // إضافة دعم السحب باللمس للهواتف
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const mainImageContainer = document.getElementById('mainImageContainer');
+        
+        mainImageContainer.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        mainImageContainer.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // سحب لليسار - التالي
+                    updateGallery(currentImageIndex + 1);
+                } else {
+                    // سحب لليمين - السابق
+                    updateGallery(currentImageIndex - 1);
+                }
+            }
+        }
+        
+        // معالجة نموذج الطلب
+        document.getElementById('orderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // التحقق من صحة رقم الهاتف
+            const phoneInput = document.getElementById('phone').value.trim();
+            const phoneRegex = /^0[5-7][0-9]{8}$/;
+            const cleanPhone = phoneInput.replace(/\D/g, '');
+            
+            if (!phoneRegex.test(cleanPhone)) {
+                alert('يرجى إدخال رقم هاتف جزائري صحيح (10 أرقام تبدأ بـ 05 أو 06 أو 07)\nمثال: 0550123456');
+                document.getElementById('phone').focus();
+                document.getElementById('phone').select();
+                return;
+            }
+            
+            // التحقق من بقية الحقول
+            const requiredFields = ['firstName', 'lastName', 'state', 'city'];
+            for (const field of requiredFields) {
+                const input = document.getElementById(field);
+                if (!input.value.trim()) {
+                    alert(`يرجى ملء حقل ${input.previousElementSibling.textContent.trim()}`);
+                    input.focus();
+                    return;
+                }
+            }
+            
+            // عرض مؤشر التحميل
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>جاري الإرسال...</span>';
+            loadingElement.style.display = 'block';
+            
+            // جمع بيانات النموذج
+            const formData = {
+                firstName: document.getElementById('firstName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                state: document.getElementById('state').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                phone: cleanPhone,
+                quantity: quantity,
+                totalPrice: parseFloat(totalPriceElement.textContent),
+                timestamp: new Date().toLocaleString('ar-EG'),
+                deviceType: /Mobi|Android/i.test(navigator.userAgent) ? 'هاتف' : 'كمبيوتر'
+            };
+            
+            try {
+                // إرسال البيانات إلى Google Sheets
+                const response = await sendToGoogleSheets(formData);
+                
+                if (response.success) {
+                    // إخفاء النموذج وإظهار رسالة التأكيد
+                    document.getElementById('orderForm').querySelectorAll('.form-group, .quantity-section, .price-calc').forEach(el => {
+                        el.style.display = 'none';
+                    });
+                    
+                    submitBtn.style.display = 'none';
+                    loadingElement.style.display = 'none';
+                    confirmationMessage.style.display = 'block';
+                    
+                    // التمرير إلى رسالة التأكيد
+                    confirmationMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    // إعادة تعيين النموذج (خفي)
+                    document.getElementById('orderForm').reset();
+                    quantity = 1;
+                    updatePrice();
+                    
+                } else {
+                    throw new Error(response.message || 'حدث خطأ غير معروف');
+                }
+            } catch (error) {
+                // عرض رسالة الخطأ
+                alert(`عذراً! حدث خطأ أثناء إرسال الطلب: ${error.message}\n\nيرجى المحاولة مرة أخرى.`);
+                
+                // إعادة تعيين زر الإرسال
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i><span>تأكيد الطلب الآن</span>';
+                loadingElement.style.display = 'none';
+            }
+        });
+        
+        // دالة إرسال البيانات إلى Google Sheets
+        async function sendToGoogleSheets(data) {
+            // استبدل هذا الرابط برابط الـ Web App الخاص بك
+            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyHqN7U1I5dwetdXeLX-plvhwoxJdNs0cUJ6oTXJIWDCNGcdxfT9XX6Cn0nnF1YkVMePg/exec';
+            
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain;charset=utf-8',
+                },
+                body: JSON.stringify(data)
+            });
+            
+            return await response.json();
+        }
+        
+        // تحسين تجربة الهاتف: منع تكبير النص عند التركيز على الحقول
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                document.body.style.fontSize = '16px'; // إصلاح لمشكلة التكبير في iOS
+            });
+        });
+        
+        // إضافة تأثيرات للتمرير على الهواتف
+        let lastScrollTop = 0;
+        const header = document.querySelector('.sticky-header');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // إخفاء/إظهار الهيدر على الهواتف
+            if (window.innerWidth <= 768) {
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // التمرير لأسفل
+                    header.style.transform = 'translateY(-100%)';
+                    header.style.transition = 'transform 0.3s ease';
+                } else {
+                    // التمرير لأعلى
+                    header.style.transform = 'translateY(0)';
+                    header.style.transition = 'transform 0.3s ease';
+                }
+            }
+            
+            lastScrollTop = scrollTop;
+            
+            // تأثير الظهور التدريجي للعناصر
+            const elements = document.querySelectorAll('.order-form, .detailed-features, .guarantee-badge');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    el.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                    el.style.transform = 'translateY(0)';
+                    el.style.opacity = '1';
+                }
+            });
+        });
+        
+        // تهيئة السعر عند التحميل
+        updatePrice();
+        
+        // تحسين لوحة المفاتيح على الهواتف
+        document.querySelectorAll('input[type="tel"]').forEach(input => {
+            input.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '').substring(0, 10);
+            });
+        });
+        
+        // تبديل تلقائي للصور كل 5 ثواني
+        let slideInterval = setInterval(() => {
+            updateGallery(currentImageIndex + 1);
+        }, 5000);
+        
+        // إيقاف التبديل التلقائي عند التفاعل مع المعرض
+        mainImageContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        mainImageContainer.addEventListener('touchstart', () => clearInterval(slideInterval));
+        mainImageContainer.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(() => {
+                updateGallery(currentImageIndex + 1);
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
